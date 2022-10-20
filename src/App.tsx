@@ -341,7 +341,7 @@ export default function App() {
               </Match>
             </Switch>
           </Stack>
-          <Typography fontSize={'14px'} mt={2} textAlign="center">
+          <Typography fontSize={'12px'} mt={2} textAlign="center">
             Ao clicar em Criar conta, você concorda com a{" "}
             <Link
               target="_blank"
