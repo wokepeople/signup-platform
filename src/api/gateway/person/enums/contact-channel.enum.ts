@@ -1,0 +1,8 @@
+export enum ContactChannel {
+  WHATSAPP = 'WHATSAPP',
+  PHONE = 'PHONE',
+  MAIN_EMAIL = 'MAIN_EMAIL',
+  ALTERNATIVE_EMAIL = 'ALTERNATIVE_EMAIL',
+  SMS = 'SMS',
+  LINKEDIN = 'LINKEDIN',
+}

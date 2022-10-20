@@ -1,0 +1,22 @@
+export type AdvancedSearchFilters = {
+  first_name?: string;
+  last_name?: string;
+  position?: string;
+  company?: string;
+  email?: string;
+  phone?: string;
+  country_phone?: string;
+  country?: string;
+  state?: string;
+  city?: string;
+  functional_area?: string[];
+  level?: string[];
+  min_salary_range?: number;
+  max_salary_range?: number;
+  contracting_regime?: string[];
+  english_level?: string[];
+  spanish_level?: string[];
+  academic_level?: string[];
+  university_name?: string[];
+  currency?: string;
+};

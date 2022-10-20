@@ -1,0 +1,30 @@
+import { Translation } from 'src/common/utils/types/translation.type';
+import { AcademicInfo } from './academic-info.type';
+import { Address } from './address.type';
+import { Contact } from './contact.type';
+import { ExternalId } from './external-id.type';
+import { ProfessionalInfo } from './professional-info.type';
+
+export type Person = {
+  id: string;
+  first_name?: string;
+  last_name?: string;
+  full_name?: string;
+  annotations?: string;
+  english_level?: Translation;
+  spanish_level?: Translation;
+  other_languages?: string;
+  created_at?: string;
+  updated_at?: string;
+  varsion?: string;
+  external_id?: ExternalId;
+  contacts?: Contact[];
+  addresses?: Address[];
+  professional_infos?: ProfessionalInfo[];
+  academic_infos?: AcademicInfo[];
+  career_moment?: Translation;
+  genre?: Translation;
+  pronoun?: Translation;
+  ethnicity?: Translation;
+  open_to_work?: boolean;
+};
