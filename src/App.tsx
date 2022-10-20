@@ -27,6 +27,7 @@ import { GatewayException } from "./api/core/exceptions/gateway-exception.except
 import { getLoading } from "./store/loading.store";
 import Modal from "@suid/material/Modal";
 import CircularProgress from "@suid/material/CircularProgress";
+import Link from "@suid/material/Link";
 
 export type FormStep = "basic_infos" | "professional_infos" | "success";
 
@@ -189,7 +190,9 @@ export default function App() {
                     fullWidth
                   />
                   <Box mt={"0.5rem"} ml={"-3rem"}>
-                    <IconButton onClick={() => setShowPassword((pass) => !pass)}>
+                    <IconButton
+                      onClick={() => setShowPassword((pass) => !pass)}
+                    >
                       <Show when={showPassword()} fallback={<VisibilityOff />}>
                         <Visibility />
                       </Show>
@@ -202,9 +205,14 @@ export default function App() {
               </Match>
               <Match when={getStep() === "professional_infos"}>
                 <Box>
-                  <IconButton onClick={() => setStep("basic_infos")}>
+                  <Link
+                    sx={{ display: 'flex' }}
+                    onClick={() => setStep("basic_infos")}
+                    href="javascript:void()"
+                  >
                     <ChevronLeft />
-                  </IconButton>
+                    <Typography>voltar</Typography>
+                  </Link>
                 </Box>
                 <TextField
                   value={currentPositionInput._inputProps.value()}
@@ -246,7 +254,10 @@ export default function App() {
                     onChange={functionalAreaInput._inputFunctions.onChange}
                     onBlur={functionalAreaInput._inputFunctions.onBlur}
                     onClick={() =>
-                      openSelection(functionalAreas, functionalAreaInput.setValue)
+                      openSelection(
+                        functionalAreas,
+                        functionalAreaInput.setValue
+                      )
                     }
                     value={functionalAreaInput._inputProps.value()}
                     helperText={functionalAreaInput._inputProps.helperText()}
@@ -330,6 +341,24 @@ export default function App() {
               </Match>
             </Switch>
           </Stack>
+          <Typography fontSize={'14px'} mt={2} textAlign="center">
+            Ao clicar em Criar conta, você concorda com a{" "}
+            <Link
+              target="_blank"
+              href="https://www.wokepeople.com.br/politica-de-privacidade"
+            >
+              Política de Privacidade
+            </Link>{" "}
+            e{" "}
+            <Link
+              target="_blank"
+              href="https://www.wokepeople.com.br/contrato-do-usuario"
+            >
+              Contrato do usuário
+            </Link>
+            , e receber mensagens da Woke. Você pode cancelar a inscrição a
+            qualquer momento.
+          </Typography>
           <Selector />
         </form>
       </Box>
