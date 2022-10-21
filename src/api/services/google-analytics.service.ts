@@ -23,12 +23,16 @@ export class GoogleAnalyticsService {
 }
 
 export const userSignUpCareerEvent = (userId: string) => {
-  const { customEvent } = new GoogleAnalyticsService();
-
+  const { customEvent, setUser } = new GoogleAnalyticsService();
+  setUser(userId);
   customEvent(
     "USER_SIGNUP_CAREER_EMBED",
     "REGISTRATION",
     "Novo usuário cadastrado",
     { dimension1: userId }
   );
+
+  customEvent("USER", "USER_SIGNUP_CAREER", "USER_SIGNUP_CAREER", {
+    dimension1: userId,
+  });
 };
