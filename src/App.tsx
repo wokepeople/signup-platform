@@ -345,7 +345,7 @@ export default function App() {
             Ao clicar em Criar conta, você concorda com a{" "}
             <Link
               target="_blank"
-              href="https://www.wokepeople.com.br/politica-de-privacidade"
+              href="https://www.wokepeople.com/politica-de-privacidade"
             >
               Política de Privacidade
             </Link>{" "}
